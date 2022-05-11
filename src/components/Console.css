@@ -1,0 +1,50 @@
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.auto {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.navbar-nav {
+    float: right;
+    line-height: 60px;
+}
+.fill-window {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.col-first {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.files {
+    margin-left: -10px;
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+
+.files-row {
+    margin-left: -10px;
+    margin-top: -40px;
+}
+.files-title {
+    margin-left: -10px;
+    margin-top: -40px;
+}
+
+.filetypetext {
+    margin-left: 10px;
+    margin-right: 10px;
+}

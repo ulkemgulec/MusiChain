@@ -1,0 +1,120 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_songHash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_songName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_songType",
+				"type": "string"
+			}
+		],
+		"name": "createSong",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSongCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTrip",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "songHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "songName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "songType",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Musichain.SongObj[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "songCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "songs",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "songHash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "songName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "songType",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
