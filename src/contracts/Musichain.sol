@@ -11,12 +11,13 @@ contract Musichain{
       string songHash;
       string songName;
       string songType;
+      string musicType;
     }
 
     mapping(uint => SongObj) public songs;
 
-    function createSong(string memory _songHash, string memory _songName, string memory _songType) public{
-        songs[songCount] = SongObj(songCount, _songHash, _songName,_songType);
+    function createSong(string memory _songHash, string memory _songName, string memory _songType, string memory _musicType) public{
+        songs[songCount] = SongObj(songCount, _songHash, _songName,_songType, _musicType);
         songCount ++;
 
     }

@@ -22,7 +22,7 @@ class Console extends Component {
         const web3 = window.web3;
         const accounts = await web3.eth.getAccounts();
         this.setState({ account: accounts[0] });
-        const address = "0xbe513Aba700a184E3Df88c14F6Ed4d5b12D42910";
+        const address = "0xAb2C94CDe047e47285cDD058AA1F71f8DbF05E9d";
         if (address) {
             const abi = Contract;
             const contract = new web3.eth.Contract(abi, address);
@@ -83,6 +83,8 @@ class Console extends Component {
             newnewdiv.appendChild(rowdiv);
             const typediv = document.createElement("div");
             typediv.classList.add("col");
+            const musicTypediv = document.createElement("div");
+            musicTypediv.classList.add("col");
             const namediv = document.createElement("div");
             namediv.classList.add("col");
             const hashdiv = document.createElement("div");
@@ -93,13 +95,16 @@ class Console extends Component {
             const hashdata = gett[i][1];
             const name = gett[i][2];
             const type = gett[i][3];
+            const musicType = gett[i][4];
             linkadiv.href = "https://ipfs.infura.io/ipfs/" + hashdata;
             linkadiv.innerText = "Click!";
             hashdiv.innerText = hashdata;
             typediv.innerText = type;
             namediv.innerText = name;
+            musicTypediv.innerText = musicType;
             rowdiv.appendChild(typediv);
             rowdiv.appendChild(namediv);
+            rowdiv.appendChild(musicTypediv);
             rowdiv.appendChild(hashdiv);
             rowdiv.appendChild(linkdiv);
             linkdiv.appendChild(linkadiv);
@@ -122,6 +127,7 @@ class Console extends Component {
         event.preventDefault();
         const songName = document.querySelector(".input-fileName").value;
         const songType = document.querySelector(".input-reportType").value;
+        const musicType = document.querySelector(".input-musicType").value;
         console.log("Submitting file to ipfs...");
         ipfs.add(this.state.buffer, (error, result) => {
             console.log("Ipfs result", result);
@@ -132,7 +138,7 @@ class Console extends Component {
                 return;
             }
             this.state.contract.methods
-                .createSong(songHash, songName, songType)
+                .createSong(songHash, songName, songType, musicType)
                 .send({ from: this.state.account })
                 .on("confirmation", (r) => {
                     this.setState({ songHash });
@@ -215,6 +221,8 @@ class Console extends Component {
                                         <option value="Rap">Rap</option>
                                         <option value="Pop">Pop</option>
                                     </select>
+
+                                   
                                     <label
                                         class="form-label filetypetext float-right"
                                         for="filetypetext"
@@ -241,6 +249,21 @@ class Console extends Component {
                                         type="submit"
                                         class="d-inline-block"
                                     />
+                                    
+                                     <select
+                                        class="float-right input-musicType"
+                                        name="filetypetext"
+                                    >
+                                        <option value="0">Select type:</option>
+                                        <option value="Lyrics">Lyrics</option>
+                                        <option value="Song">Song</option>
+                                    </select>
+                                    <label
+                                        class="form-label filetypetext float-right"
+                                        for="filetypetext"
+                                    >
+                                        Music Type:
+                                    </label>
                                 </form>
                             </div>
                         </div>
@@ -258,6 +281,12 @@ class Console extends Component {
                                             Name
                                         </div>
                                     </div>
+                                    <div class="col">
+                                        <div className="border-bottom">
+                                            Type
+                                        </div>
+                                    </div>
+                                    
                                     <div class="col-7">
                                         <div className="border-bottom">
                                             Hash

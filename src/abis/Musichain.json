@@ -15,6 +15,11 @@
 				"internalType": "string",
 				"name": "_songType",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_musicType",
+				"type": "string"
 			}
 		],
 		"name": "createSong",
@@ -59,6 +64,11 @@
 					{
 						"internalType": "string",
 						"name": "songType",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "musicType",
 						"type": "string"
 					}
 				],
@@ -111,6 +121,11 @@
 			{
 				"internalType": "string",
 				"name": "songType",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "musicType",
 				"type": "string"
 			}
 		],
